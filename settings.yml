@@ -1,0 +1,226 @@
+use_default_settings:
+  engines:
+    remove:
+    - google
+server:
+  base_url: https://search.jeremyh.xyz/
+  secret_key: "REDACTED"
+  limiter: true
+  image_proxy: true
+  method: GET
+  public_instance: true
+  trusted_proxies:
+  - 127.0.0.0/8
+  - ::1
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+  - 172.18.0.0/16
+  - 172.20.0.0/16
+search:
+  suspended_times:
+    SearxEngineCaptcha: 5
+    SearxEngineAccessDenied: 60
+    SearxEngineTooManyRequests: 60
+  formats:
+  - html
+  - json
+  safe_search: 2
+outgoing:
+  request_timeout: 1.5
+  max_request_timeout: 15.0
+  retries: 2
+  retry_sleep: 0.5
+engines:
+- name: wikidata
+  timeout: 2.0
+- name: fynd
+  disabled: false
+  timeout: 1.5
+- name: yandex
+  disabled: false
+- name: startpage
+  inactive: false
+  disabled: true
+- name: yep
+  disabled: true
+- name: privacywall images
+  disabled: false
+- name: openverse
+  disabled: false
+- name: google cse
+  disabled: true
+- name: google cse images
+  disabled: true
+- name: ahmia
+  inactive: true
+- name: torch
+  inactive: true
+- name: bing
+  disabled: false
+- name: yahoo
+  disabled: false
+- name: mwmbl
+  disabled: false
+- name: privacywall
+  disabled: false
+- name: google
+  engine: google_cookie
+  shortcut: gg
+  proxies:
+    all://:
+    - http://google-routes:8888
+  retries: 2
+  retry_on_http_error:
+  - 302
+  - 429
+  categories:
+  - go
+  timeout: 12.0
+- name: google web
+  engine: google_cookie
+  shortcut: gw
+  categories:
+  - general
+  - web
+  timeout: 2.5
+- name: google check1
+  engine: google
+  shortcut: gchk1
+  categories:
+  - google check
+  disabled: true
+  timeout: 12.0
+  proxies:
+    all://:
+    - http://proton:8888
+- name: google check2
+  engine: google
+  shortcut: gchk2
+  categories:
+  - google check
+  disabled: true
+  timeout: 12.0
+  proxies:
+    all://:
+    - http://proton2:8888
+- name: google check3
+  engine: google
+  shortcut: gchk3
+  categories:
+  - google check
+  disabled: true
+  timeout: 12.0
+  proxies:
+    all://:
+    - http://proton3:8888
+- name: google images
+  proxies:
+    all://:
+    - http://google-routes:8888
+  retries: 2
+  retry_on_http_error:
+  - 429
+  disabled: false
+  timeout: 3.0
+- name: brave
+  disabled: false
+  timeout: 1.5
+valkey:
+  url: valkey://valkey:6379/0
+preferences:
+  lock:
+  - safesearch
+hostnames:
+  remove:
+  - (.*\.)?reddxxx\.com$
+  - (.*\.)?eporner\.com$
+  - (.*\.)?pornhub\.com$
+  - (.*\.)?xvideos\.com$
+  - (.*\.)?xhamster\.com$
+  - (.*\.)?xnxx\.com$
+  - (.*\.)?onlyfans\.com$
+  - (.*\.)?fansly\.com$
+  - (.*\.)?redtube\.com$
+  - (.*\.)?youporn\.com$
+  - (.*\.)?spankbang\.com$
+  - (.*\.)?tube8\.com$
+  - (.*\.)?beeg\.com$
+  - (.*\.)?youjizz\.com$
+  - (.*\.)?porntrex\.com$
+  - (.*\.)?hqporner\.com$
+  - (.*\.)?spankwire\.com$
+  - (.*\.)?txxx\.com$
+  - (.*\.)?tnaflix\.com$
+  - (.*\.)?motherless\.com$
+  - (.*\.)?thumbzilla\.com$
+  - (.*\.)?xozilla\.com$
+  - (.*\.)?sxyprn\.com$
+  - (.*\.)?porn\.com$
+  - (.*\.)?pornhd\.com$
+  - (.*\.)?4tube\.com$
+  - (.*\.)?porntube\.com$
+  - (.*\.)?fuq\.com$
+  - (.*\.)?drtuber\.com$
+  - (.*\.)?sunporno\.com$
+  - (.*\.)?hclips\.com$
+  - (.*\.)?hdzog\.com$
+  - (.*\.)?upornia\.com$
+  - (.*\.)?vjav\.com$
+  - (.*\.)?javhd\.com$
+  - (.*\.)?javlibrary\.com$
+  - (.*\.)?missav\.com$
+  - (.*\.)?missav\.ws$
+  - (.*\.)?jable\.tv$
+  - (.*\.)?supjav\.com$
+  - (.*\.)?jav\.guru$
+  - (.*\.)?javmost\.com$
+  - (.*\.)?rule34\.xxx$
+  - (.*\.)?rule34video\.com$
+  - (.*\.)?rule34\.paheal\.net$
+  - (.*\.)?e621\.net$
+  - (.*\.)?nhentai\.net$
+  - (.*\.)?e-hentai\.org$
+  - (.*\.)?exhentai\.org$
+  - (.*\.)?hanime\.tv$
+  - (.*\.)?hentaihaven\.xxx$
+  - (.*\.)?hentai2read\.com$
+  - (.*\.)?chaturbate\.com$
+  - (.*\.)?stripchat\.com$
+  - (.*\.)?bongacams\.com$
+  - (.*\.)?livejasmin\.com$
+  - (.*\.)?cam4\.com$
+  - (.*\.)?camsoda\.com$
+  - (.*\.)?myfreecams\.com$
+  - (.*\.)?manyvids\.com$
+  - (.*\.)?clips4sale\.com$
+  - (.*\.)?brazzers\.com$
+  - (.*\.)?realitykings\.com$
+  - (.*\.)?bangbros\.com$
+  - (.*\.)?naughtyamerica\.com$
+  - (.*\.)?mofos\.com$
+  - (.*\.)?erome\.com$
+  - (.*\.)?scrolller\.com$
+  - (.*\.)?redgifs\.com$
+  - (.*\.)?fapello\.com$
+  - (.*\.)?coomer\.su$
+  - (.*\.)?coomer\.st$
+  - (.*\.)?kemono\.su$
+  - (.*\.)?thothub\.to$
+  - (.*\.)?influencersgonewild\.com$
+  - (.*\.)?nudostar\.com$
+  - (.*\.)?xxxbunker\.com$
+  - (.*\.)?pornone\.com$
+  - (.*\.)?eroprofile\.com$
+  - (.*\.)?heavy-r\.com$
+  - (.*\.)?efukt\.com$
+  - (.*\.)?ixxx\.com$
+  - (.*\.)?porn300\.com$
+  - .*\.xxx$
+  - .*\.porn$
+  - .*\.sex$
+  - .*\.adult$
+general:
+  contact_url: mailto:jh@jeremyh.xyz
+plugins:
+  searx.engines.adultblock.SXNGPlugin:
+    active: true
