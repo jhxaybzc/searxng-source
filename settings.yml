@@ -24,7 +24,7 @@ search:
   formats:
   - html
   - json
-  safe_search: 2
+  safe_search: 0
 outgoing:
   request_timeout: 1.5
   max_request_timeout: 15.0
@@ -221,6 +221,4 @@ hostnames:
   - .*\.adult$
 general:
   contact_url: mailto:jh@jeremyh.xyz
-plugins:
-  searx.engines.adultblock.SXNGPlugin:
-    active: true
+
